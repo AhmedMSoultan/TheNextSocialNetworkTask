@@ -28,8 +28,10 @@ struct PostCell: View {
                                 hasCornerRadius: true)
                 .cornerRadius(20)
                 .onTapGesture {
-                    selectedImage = "https://picsum.photos/170/17\(post.id ?? 0)"
-                    isShowingFullScreen = true
+                    withAnimation {
+                        selectedImage = "https://picsum.photos/170/17\(post.id ?? 0)"
+                        isShowingFullScreen = true
+                    }
                 }
                 
                 VStack(alignment: .leading, spacing: 2) {
@@ -54,7 +56,7 @@ struct PostCell: View {
             
             //MARK: Post Text View
             TextWithHighlightedSearchText(text: post.body ?? "", searchText: searchText)
-            .font(.system(size: 17, weight: .regular))
+                .font(.system(size: 17, weight: .regular))
             
             //MARK: Post Image View
             ImageGalleryView(selectedImage: $selectedImage,

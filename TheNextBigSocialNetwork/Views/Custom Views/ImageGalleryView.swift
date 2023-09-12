@@ -26,8 +26,10 @@ struct ImageGalleryView: View {
                                 url: URL(string: "https://picsum.photos/170/17\(0)")!,
                                 hasCornerRadius: true)
                 .onTapGesture {
-                    selectedImage = "https://picsum.photos/170/17\(0)"
-                    isShowingFullScreen = true
+                    withAnimation {
+                        selectedImage = "https://picsum.photos/170/17\(0)"
+                        isShowingFullScreen = true
+                    }
                 }
             case 2:
                 LazyVGrid(columns: columns, alignment: .leading, spacing: 8) {
@@ -38,8 +40,10 @@ struct ImageGalleryView: View {
                                         url: URL(string: "https://picsum.photos/170/17\(number)")!,
                                         hasCornerRadius: true)
                         .onTapGesture {
-                            selectedImage = "https://picsum.photos/170/17\(number)"
-                            isShowingFullScreen = true
+                            withAnimation {
+                                selectedImage = "https://picsum.photos/170/17\(number)"
+                                isShowingFullScreen = true
+                            }
                         }
                     }
                 }
@@ -48,8 +52,10 @@ struct ImageGalleryView: View {
                     KingFisherImage(imageSize: CGSize(width: UIScreen.main.bounds.width/2 - 24, height: 178 * 2 + 8), url: URL(string: "https://picsum.photos/170/17\(0)")!,
                                     hasCornerRadius: true)
                     .onTapGesture {
-                        selectedImage = "https://picsum.photos/170/17\(0)"
-                        isShowingFullScreen = true
+                        withAnimation {
+                            selectedImage = "https://picsum.photos/170/17\(0)"
+                            isShowingFullScreen = true
+                        }
                     }
                     
                     VStack {
@@ -57,8 +63,10 @@ struct ImageGalleryView: View {
                             KingFisherImage(imageSize: CGSize(width: UIScreen.main.bounds.width/2 - 24, height: 178), url: URL(string: "https://picsum.photos/170/17\(number)")!,
                                             hasCornerRadius: true)
                             .onTapGesture {
-                                selectedImage = "https://picsum.photos/170/17\(number)"
-                                isShowingFullScreen = true
+                                withAnimation {
+                                    selectedImage = "https://picsum.photos/170/17\(number)"
+                                    isShowingFullScreen = true
+                                }
                             }
                         }
                     }
@@ -70,11 +78,13 @@ struct ImageGalleryView: View {
                     
                     ForEach((0...3), id: \.self) { number in
                         KingFisherImage(imageSize: CGSize(width: UIScreen.main.bounds.width/2 - 24, height: 178),
-                                        url: URL(string: "https://picsum.photos/170/17\("https://picsum.photos/170/17\(number)")")!,
+                                        url: URL(string: "https://picsum.photos/170/17\(number)")!,
                                         hasCornerRadius: true)
                         .onTapGesture {
-                            selectedImage = "https://picsum.photos/170/17\("https://picsum.photos/170/17\(number)")"
-                            isShowingFullScreen = true
+                            withAnimation {
+                                selectedImage = "https://picsum.photos/170/17\(number)"
+                                isShowingFullScreen = true
+                            }
                         }
                     }
                 }
@@ -89,8 +99,10 @@ struct ImageGalleryView: View {
                                 KingFisherImage(imageSize: CGSize(width: UIScreen.main.bounds.width/2 - 24, height: 178), url: URL(string: "https://picsum.photos/170/17\(number)")!,
                                                 hasCornerRadius: true)
                                 .onTapGesture {
-                                    selectedImage = "https://picsum.photos/170/17\(number)"
-                                    isShowingFullScreen = true
+                                    withAnimation {
+                                        selectedImage = "https://picsum.photos/170/17\(number)"
+                                        isShowingFullScreen = true
+                                    }
                                 }
                                 
                                 // Thin Material with Image
@@ -113,8 +125,10 @@ struct ImageGalleryView: View {
                                             url: URL(string: "https://picsum.photos/170/17\(number)")!,
                                             hasCornerRadius: true)
                             .onTapGesture {
-                                selectedImage = "https://picsum.photos/170/17\(number)"
-                                isShowingFullScreen = true
+                                withAnimation {
+                                    selectedImage = "https://picsum.photos/170/17\(number)"
+                                    isShowingFullScreen = true
+                                }
                             }
                         }
                     }

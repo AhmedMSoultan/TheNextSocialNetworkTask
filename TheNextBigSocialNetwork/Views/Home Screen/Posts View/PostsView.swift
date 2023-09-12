@@ -83,13 +83,19 @@ struct PostsView: View {
                     Color.black.opacity(0.5)
                     
                     KingFisherImage(imageSize: CGSize(width: UIScreen.main.bounds.width - 16, height: UIScreen.main.bounds.width - 16), url: URL(string: selectedImage)!)
+                        .transition(.scale)
                         .onTapGesture {
-                            isShowingPreviewScreen = false
+                            withAnimation {
+                                isShowingPreviewScreen = false
+                            }
                         }
                 }
                 .ignoresSafeArea()
+                .transition(.opacity)
                 .onTapGesture {
-                    isShowingPreviewScreen = false
+                    withAnimation {
+                        isShowingPreviewScreen = false
+                    }
                 }
             }
         }
