@@ -1,0 +1,6 @@
+framework module Pods_TheNextBigSocialNetwork {
+  umbrella header "Pods-TheNextBigSocialNetwork-umbrella.h"
+
+  export *
+  module * { export * }
+}
